@@ -5,8 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/laravel', "welcome");
 Route::view('/', "home");
-Route::resource("jobs", JobController::class);
+// Route::resource("jobs", JobController::class);
 
+// Route::resource("jobs", JobController::class, [
+// 	"only"	=>	["index"],
+// ]);
 // Route::get('/laravel', function () {
 //     return view('welcome');
 // });
