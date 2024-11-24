@@ -3,11 +3,17 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\TestLogJob;
+use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/laravel', "welcome");
 Route::view('/', "home");
 
+Route::get("/test", function(){
+	TestLogJob::dispatch(Job::first());
+	return "done";
+});
 
 Route::get("/jobs", [JobController::class, "index"]);
 Route::get("/jobs/create", [JobController::class, "create"]);
