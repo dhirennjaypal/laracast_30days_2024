@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Page</title>
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-	<link href="{{ asset('css/tailwind.css') }}" rel="stylesheet">
+	@vite(["resources/css/app.css", "resources/js/app.js"])
 </head>
 
 <body class="h-full">
